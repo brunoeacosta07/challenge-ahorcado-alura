@@ -16,16 +16,24 @@
     <section class="titulo">
       <h1>Nueva palabra</h1>
     </section>
-    <section class="contenedor-input-panel">
+    <div class="contenedor-input-panel">
       <textarea  class="input-nueva-palabra" name="ingresar" id="input-palabra" cols="20" rows="10" placeholder="Ingrese una palabra..."></textarea>
-    </section>
-    <section class="contenedor-botones-input">
+    </div>
+    <div class="contenedor-botones-input">
       <span class="advertencia"><img src="img/advertencia.png" alt="">Máx. de 8 letras</span>
     <div class="botones-input-palabra">
       <button class="boton-input guardar">Guardar y empezar</button>
-      <button class="boton-input cancelar">Cancelar</button>
+      <button class="boton-input cancelar" role="link" onclick="window.location='index.html'">Cancelar</button>
     </div>
-    </section>
+  </div>
   </main>
+  <footer>
+    <div class="redes">
+      <a href="https://www.github.com/brunoeacosta07/" target="_blank" title="GitHub"><img class="img_redes" src="img/github.svg" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/brunoeacosta/" target="_blank" title="LinkedIn"><img class="img_redes" src="img/linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://www.twitter.com/iluvatarae/" target="_blank" title="Twitter"><img class="img_redes" src="img/twitter1.svg" alt="Twitter"></a>
+    </div>
+    <p class="copyright">&copy Bruno Acosta - 2022</p>
+  </footer>
 </body>
 </html>
