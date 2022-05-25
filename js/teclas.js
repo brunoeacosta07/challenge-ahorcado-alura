@@ -1,7 +1,9 @@
 document.addEventListener('keydown', (event) => {
-  var keyValue = event.key;
-  var codeValue = event.code;
+  var tecla_presionada = event.key.toUpperCase();
+  var codigo_ascii = tecla_presionada.charCodeAt();
+  
 
-  console.log("keyValue: " + keyValue);
-  console.log("codeValue: " + codeValue);
+  console.log("tecla: " + tecla_presionada);
+  console.log("codigo ascii: " + codigo_ascii);
 }, false);
+

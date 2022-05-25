@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahorcado | Bruno Acosta</title>
+  <title>Ahorcado | Bruno Acosta</title> 
   <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,11 +14,11 @@
       <a href="index.html"><img src="img/logo_alura.png" alt="Logo Alura"></a>
     </div>
     <div class="titulo">
-      <h1>Ahorcado</h1>
+      <h1 id="texto-titulo">Ahorcado</h1>
     </div>
     <section class="contenedor-principal-juego">
       <div class="contenedor-img">
-        <img src="img/ahorcado-0.png" alt="imagen ahorcado" class="img-ahorcado">
+        <img src="img/ahorcado-0.png" alt="imagen ahorcado" class="img-ahorcado" id="imagen-ahorcado">
       </div>
       <div class="contenedor-palabra">
         <p class="letra letra-0"></p>
@@ -30,9 +30,12 @@
         <p class="letra letra-6"></p>
         <p class="letra letra-7"></p>
       </div>
+      <div class="contenedor-letras-erradas">
+        <span class="letras-erradas"></span>
+      </div>
     </section>
     <div class="contenedor-botones-juego">
-      <button class="boton-juego nuevo-juego">Nuevo Juego</button>
+      <button class="boton-juego nuevo-juego" role="link" onclick="window.location='juego.html'">Nuevo Juego</button>
       <button class="boton-juego desistir" role="link" onclick="window.location='index.html'">Desistir</button>
     </div>
   </main>
@@ -44,5 +47,7 @@
     </div>
     <p class="copyright">&copy Bruno Acosta - 2022</p>
   </footer>
+  <script src="js/main.js"></script>
+  <script src="js/game.js"></script>
 </body>
 </html>

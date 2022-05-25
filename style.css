@@ -30,6 +30,15 @@ body{
   color: #0A3871;
   text-align: center;
   font-size: 2.3rem;
+  transition: all 400ms ease-in-out;
+}
+
+.titulo .ganaste{
+  color: green;
+}
+
+.titulo .perdiste{
+  color: red;
 }
 
 .contenedor-botones-index{
@@ -213,13 +222,32 @@ footer .img_redes:hover{
   margin-top: 5px;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items:stretch;
 }
 
 .letra{
+  color: #0A3871;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
   width: 10.5%;
   height: 50px;
+  padding-bottom: 5px;
   border-bottom: 3px solid #0A3871;
+}
+
+.contenedor-letras-erradas{
+
+  text-align: center;
+  display: block;
+  padding-top: 5px;
+  margin: 0 auto;
+}
+
+.letras-erradas{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3e444b;
 }
 
 .contenedor-botones-juego{
