@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ingresar Nueva Palabra | Ahorcado</title>
+  <link rel="shortcut icon" href="img/logo_alura.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,11 +19,14 @@
     </section>
     <div class="contenedor-input-panel">
       <textarea  class="input-nueva-palabra" name="ingresar" id="input-palabra" cols="20" rows="10" placeholder="Ingrese una palabra..."></textarea>
+      <div class="contenedor-popup">
+        <span class="popuptext" id="myPopup"></span>
+      </div>
     </div>
     <div class="contenedor-botones-input">
       <span class="advertencia"><img src="img/advertencia.png" alt="">Máx. de 8 letras</span>
     <div class="botones-input-palabra">
-      <button class="boton-input guardar">Guardar y empezar</button>
+      <button class="boton-input guardar" id="btn-guardar">Guardar y empezar</button>
       <button class="boton-input cancelar" role="link" onclick="window.location='index.html'">Cancelar</button>
     </div>
   </div>
@@ -35,5 +39,6 @@
     </div>
     <p class="copyright">&copy Bruno Acosta - 2022</p>
   </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>

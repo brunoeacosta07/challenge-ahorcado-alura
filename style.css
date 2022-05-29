@@ -30,15 +30,18 @@ body{
   color: #0A3871;
   text-align: center;
   font-size: 2.3rem;
-  transition: all 400ms ease-in-out;
+  transition: all 600ms ease-in-out;
+  content: 'hola mundo';
 }
 
 .titulo .ganaste{
   color: green;
+  transform: scale(1.03);
 }
 
 .titulo .perdiste{
   color: red;
+  transform: scale(1.03);
 }
 
 .contenedor-botones-index{
@@ -145,6 +148,61 @@ footer .img_redes:hover{
   opacity: 0.9;
 }
 
+/* Contenedor del popup */
+.contenedor-popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* pop-up actual */
+.contenedor-popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #0A3871;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 1%;
+  left: 10%;
+  margin-left: -40vw;
+  
+}
+
+/* Muestra del Pop-up*/
+.contenedor-popup .popuptext::after {
+  content: "";
+  position: absolute;
+  transform: rotate(180deg);
+  top: -12%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #0A3871 transparent transparent transparent;
+}
+
+/* Cambio para mostrar/ocultar el contenedor del pop-up */
+.contenedor-popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Animación del pop-up */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
 .contenedor-botones-input{
   width: 50%;
   margin: 0 auto;
@@ -215,11 +273,12 @@ footer .img_redes:hover{
 }
 
 .img-ahorcado{
-  width: 45%;
+  width: 40%;
 }
 
 .contenedor-palabra{
-  margin-top: 5px;
+  margin: 5px 0;
+  padding: 15px 0;
   display: flex;
   justify-content: space-around;
   align-items:stretch;
@@ -228,12 +287,12 @@ footer .img_redes:hover{
 .letra{
   color: #0A3871;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.7rem;
   font-weight: 800;
   width: 10.5%;
-  height: 50px;
+  height: 70px;
   padding-bottom: 5px;
-  border-bottom: 3px solid #0A3871;
+  border-bottom: 4px solid #0A3871;
 }
 
 .contenedor-letras-erradas{
@@ -245,7 +304,7 @@ footer .img_redes:hover{
 }
 
 .letras-erradas{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #3e444b;
 }
@@ -297,6 +356,108 @@ footer .img_redes:hover{
   right: 3%;
 }
 
+/*Mensaje final del juego*/
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.overlay.active{
+  visibility: visible;
+}
+
+
+.cuadro-final-juego{
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .8);
+  border-radius: 10px;
+  padding: 3% 2%;
+  text-align: center;
+  width: 40vw;
+  transition: all .8s ease;
+  transform: scale(0.7);
+  opacity: 0;
+}
+
+.cuadro-final-juego .btn-cerrar-cuadro{
+  font-size: 1rem;
+  line-height: 1rem;
+  display: block;
+  text-align: right;
+  color: #BBBBBB;
+  transition: all 300ms ease;
+}
+
+.cuadro-final-juego #btn-cerrar-cuadro:hover{
+  color: #0A3871;
+}
+
+.cuadro-final-juego h2{
+  color: #0A3871;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  opacity: 0;
+}
+
+.cuadro-final-juego .contenedor-btn-final{
+  opacity: 0;
+}
+
+.cuadro-final-juego .contenedor-btn-final button{
+  width: 100%;
+  margin-bottom: 5px;
+  height: 52px;
+  line-height: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/*Animaciones Mensaje final*/
+@keyframes entradaTitulo{
+  from{
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entradaBtn{
+  from{
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cuadro-final-juego.active{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cuadro-final-juego.active h2{
+  animation: entradaTitulo 1s .3s ease forwards;
+}
+
+.cuadro-final-juego.active .contenedor-btn-final{
+  animation: entradaBtn 1s .3s ease forwards;
+}
+
+
 /*Media Querys*/
 
 @media only screen and (max-width:440px){
@@ -333,6 +494,13 @@ footer .img_redes:hover{
     align-items: flex-end;
     gap: 10px;
   }
+
+  .contenedor-popup .popuptext {
+    bottom: 5%;
+    left: 10%;
+    margin-left: -50vw;
+  }
+
   .boton-input{
     width: 100%;
     height: calc(50% - 29px);
@@ -344,7 +512,7 @@ footer .img_redes:hover{
   }
 
   .contenedor-principal-juego{
-    width: 95% !important;
+    min-width: 95%;
   }
 
   .contenedor-img{
@@ -352,7 +520,7 @@ footer .img_redes:hover{
   }
 
   .img-ahorcado{
-    width: 75% !important;
+    min-width: 75%;
   }
 
   .contenedor-botones-juego{
@@ -372,6 +540,8 @@ footer .img_redes:hover{
   .boton-juego.desistir{
     padding: 20px 0;
   }
+
+  
 }
 
 @media only screen and (max-width: 821px){
@@ -405,6 +575,10 @@ footer .img_redes:hover{
   .footer-juego{
     position: relative;
     bottom: 1px;
+  }
+
+  .cuadro-final-juego{
+    min-width: 70vw;
   }
 
 }
@@ -448,6 +622,9 @@ footer .img_redes:hover{
     bottom: 0;
   }
 
+  .cuadro-final-juego{
+    width: 50vw;
+  }
 }
 
 @media only screen and (max-width: 912px){
@@ -464,13 +641,9 @@ footer .img_redes:hover{
     padding: 25px 0;
   }
 
-  /* .contenedor-principal-juego{
-    width: 65%;
+  .cuadro-final-juego{
+    width: 50vw;
   }
-
-  .img-ahorcado{
-    width: 60%;
-  } */
 
 }
 

@@ -5,7 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ahorcado | Bruno Acosta</title> 
+  <link rel="shortcut icon" href="img/logo_alura.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +16,7 @@
       <a href="index.html"><img src="img/logo_alura.png" alt="Logo Alura"></a>
     </div>
     <div class="titulo">
-      <h1 id="texto-titulo">Ahorcado</h1>
+      <h1 id="texto-titulo">Ingrese una letra...</h1>
     </div>
     <section class="contenedor-principal-juego">
       <div class="contenedor-img">
@@ -38,6 +40,16 @@
       <button class="boton-juego nuevo-juego" role="link" onclick="window.location='juego.html'">Nuevo Juego</button>
       <button class="boton-juego desistir" role="link" onclick="window.location='index.html'">Desistir</button>
     </div>
+    <div class="overlay">
+      <div class="cuadro-final-juego">
+        <a href="#" id="btn-cerrar-cuadro" class="btn-cerrar-cuadro"><i class="fas fa-times"></i></a>
+        <h2>Fin del Juego</h2>
+        <div class="contenedor-btn-final">
+          <button class="boton-juego nuevo-juego" role="link" onclick="window.location='juego.html'">Nuevo Juego</button>
+          <button class="boton-juego desistir" role="link" onclick="window.location='index.html'">Salir</button>
+        </div>
+      </div>
+    </div>
   </main>
   <footer class="footer-juego">
     <div class="redes">
@@ -47,7 +59,6 @@
     </div>
     <p class="copyright">&copy Bruno Acosta - 2022</p>
   </footer>
-  <script src="js/main.js"></script>
   <script src="js/game.js"></script>
 </body>
 </html>
